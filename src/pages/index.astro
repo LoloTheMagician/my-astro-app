@@ -14,3 +14,23 @@
 		<h1>Astro</h1>
 	</body>
 </html>
+
+<style is:global>
+	:root {
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: 300;
+	}
+</style>
+<script>
+	import Lenis from "lenis";
+	// Initialize Lenis
+	const lenis = new Lenis();
+
+	// Use requestAnimationFrame to continuously update the scroll
+	function raf(time: number) {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	}
+
+	requestAnimationFrame(raf);
+</script>
